@@ -1,32 +1,19 @@
 before_script:
-  - cp config/database.yml.travis config/database.yml
-  - psql -c 'create database travis_ci_test;' -U postgres
-
+- cp config/database.yml.travis config/database.yml
+- psql -c 'create database travis_ci_test;' -U postgres
 before_install: gem install bundler -v 2.0.2
-
-language: ruby 
-
-rvm: 
-  - 2.6.3
-
+language: ruby
+rvm:
+- 2.6.3
 services:
-  - postgresql
-
+- postgresql
 script:
-  - bundle exec rails db:migrate RAILS_ENV=test
-  # - rails db:create
-  # - rails db:migrate
-  # - rails db:seed
-  - bundle exec rspec 
-
-
-
-    # # for heroku
-# deploy:
-  # provider: heroku
-  # api_key:
-    # secure: ENV['HEROKU_API_KEY'] 
-  # app: rails_eng
-  # on:
-    # repo: OrencioRodolfo/rails_eng
-
+- bundle exec rails db:migrate RAILS_ENV=test
+- bundle exec rspec
+deploy:
+  provider: heroku
+  app: upvote-ideas
+  on: 
+    repo: jobannon/upvote_api
+  api_key:
+    secure: iaVwbPlFbQWPznzSjXqmCEhxjAgYMeTaQhquQ0Gg2xXezhZLP4xGPYA650Rerlue2Gr8t3diYaeXWXV2yxbKW5iTj/JfiFLEOIBIlZ94ojrSiGwCRZfDnOHfhgQiWmf7Z+vTFXsb45HRKEQrfZap1ttCMhvHust5roYJdzFZDx7dBB3Qpt7Zz0iyAtJ4gS+3ZTD7rPH8mXAuR9y7UVi02CoTWHfCCo6HEr0fc1orkfEEAaeY4B3LK0XIl8Ux77SKW9aB3CNNjgA3kzVNdqiDpvfIec1nT6y6VdZentAti6v4OgUygN1Em+vL1eUpSgf0Xicy4zXvSlCXseugvFUsZ6HDV52SgPOKr24lzQ//BzZnH99ceO1rB3u2P+AQ2Y3ZSJbm63oaq6kJgD+EnH0Ej/2OS2D3SbOz9TnIQzlNHW/LhLXdruXZ347rrJFNresY4ahM5cezyBUnjDA9Hsi8Az9lmy2RuVGdCXkD3KgWhIZCT+OoVLT/u2wo3H4rnJatWKSQ1z0BZLBIygjFCmAY41B/cRRFvW2R46pQS0V4gc1BNN4Ia73CeMH6no499dR20AgwhaEf8JkRHA11zp8DVcT9WszmWk2vv8+HnuhDjsmHTaUOd1pU3D8ZGACvLgn20AZSmlu70HLkUNA9HxcqvuNK6SmyPukb0I2zstHnA8s=
