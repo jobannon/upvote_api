@@ -20,6 +20,7 @@ gem 'faraday'
 gem 'figaro'
 gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
 gem 'rubocop', '~> 0.79.0', require: false
+gem 'rack-cors'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
