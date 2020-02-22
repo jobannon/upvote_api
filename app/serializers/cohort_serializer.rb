@@ -1,4 +1,4 @@
 class CohortSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :cohort
+  attributes :cohort_number
 end

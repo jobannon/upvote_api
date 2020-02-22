@@ -3,12 +3,11 @@ require 'rails_helper'
 describe "ideas API" do
   it "send a list of ideas for each cohort" do
     cohort = create(:cohort)
-    5.times do
-      user = create(:user, cohort_id: cohort.id)
-      create(:idea, cohort_id: cohort.id, user_id: user.id)
-    end
+    user = create(:user, cohort_id: cohort.id)
 
-    get "/api/v1/cohorts/#{cohort.id}/ideas"
+    create_list(:idea, 5, cohort_id: cohort.id, user_id: user.id)
+
+    get "/api/v1/cohorts/#{cohort.cohort_number}/ideas"
 
     expect(response).to be_successful
 
@@ -21,7 +20,7 @@ describe "ideas API" do
     user = create(:user, cohort_id: cohort.id)
     idea = create(:idea, cohort_id: cohort.id, user_id: user.id)
 
-    get "/api/v1/cohorts/#{cohort.id}/ideas/#{idea.id}"
+    get "/api/v1/cohorts/#{cohort.cohort_number}/ideas/#{idea.id}"
 
     expect(response).to be_successful
 
@@ -33,8 +32,6 @@ describe "ideas API" do
     expect(idea['attributes'].keys).to include('solution')
     expect(idea['attributes'].keys).to include('audience')
     expect(idea['attributes'].keys).to include('features')
-    expect(idea['attributes'].keys).to include('apis')
-    expect(idea['attributes'].keys).to include('updated_at')
     expect(idea['attributes'].keys).to include('apis')
     expect(idea['attributes'].keys).to include('oauth')
     expect(idea['attributes'].keys).to include('user_id')
