@@ -3,7 +3,7 @@ Idea.destroy_all
 User.destroy_all
 Cohort.destroy_all
 
-cohort = Cohort.create!(cohort: '1909')
+cohort = Cohort.create!(cohort_number: '1909')
 n = 1
 5.times do
   user = User.create!(github_id: "1234#{n}", token: "ABCD#{n}", handle: "JoshRocks#{n}", cohort_id: cohort.id)
