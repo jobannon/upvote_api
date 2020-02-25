@@ -3,11 +3,13 @@ Rails.application.routes.draw do
 
   get '/', to: 'welcome#index', as: "splash"
 
-  namespace :api do 
-    namespace :v1 do 
-      resources :cohorts, only: [:index] do 
-        resources :ideas
-      end
+  namespace :api do
+    namespace :v1 do
+      get '/cohorts', to: 'cohorts#index'
+      get '/cohorts/ideas', to: 'ideas#index'
+      get '/cohorts/ideas/:id', to: 'ideas#show'
+      post '/cohorts/ideas/:id', to: 'ideas#create'
+      patch '/cohorts/ideas/:id', to: 'ideas#update'
     end
   end
 end
