@@ -1,13 +1,11 @@
 class Api::V1::IdeasController < ApplicationController
+  skip_before_action :verify_authenticity_token
 
   def index
-    # cohort = Cohort.find(params[:cohort_id])
-    # require "pry"; binding.pry
-    # user = User.find(session[:user_id])
-    # render json: user
-    cohort = Cohort.find_by(cohort_number: params[:cohort_id])
-    render json: IdeaSerializer.new(cohort.ideas)
-
+    user = User.last
+    #cohort = Cohort.find_by(cohort_number: params[:cohort_id])
+    cohort = Cohort.find(user.cohort_id)
+    render json: IdeaSerializer.new(cohort.ideas.sort_by { |idea| idea.vote_count }.reverse)
   end
 
   def show
@@ -24,6 +22,14 @@ class Api::V1::IdeasController < ApplicationController
     session[:user_id] = User.first.id
     redirect_to 'http://localhost:9292'
   end
+
+  def post
+    idea = Idea.find(params[:id])
+    idea.vote_count += 1
+    idea.save
+    redirect_to 'http://localhost:9292/cohorts/ideas'
+  end
+
 
   private
 
