@@ -15,5 +15,6 @@ RSpec.describe Idea, type: :model do
     it { should validate_presence_of(:features) }
     it { should validate_presence_of(:apis) }
     it { should validate_presence_of(:oauth) }
+    it { should validate_presence_of(:vote_count) }
   end
 end
