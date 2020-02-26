@@ -10,4 +10,5 @@ class Idea < ApplicationRecord
   validates_presence_of :features
   validates_presence_of :apis
   validates_presence_of :oauth
+  validates_presence_of :vote_count
 end
