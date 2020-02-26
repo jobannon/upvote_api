@@ -40,18 +40,24 @@ describe "ideas API" do
     expect(idea['attributes'].keys).to_not include('created_at')
   end
 
-  xit "create idea " do 
+  it "create idea" do 
     cohort = create(:cohort)
     user = create(:user, cohort_id: cohort.id)
-    idea = create(:idea, cohort_id: cohort.id, user_id: user.id)
-    default_img = "https://images.unsplash.com/photo-1552862750-746b8f6f7f25?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80"
 
-    expect(Idea.first.img_url).to eq(default_img)    
-    #
-    #b/c we cannot do a controller test
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-    photo_url = IdeasPhotoGetter.new("dog").get_photo
-    Idea.create!(title: "dog", pitch: 'save the world', problem: "overpopulation", solution: 'none', audience: 'students', features: 'dope stuff', apis: 'sure', oauth: 'github', user_id: user.id, cohort_id: cohort.id, img_url: photo_url)
+    post('/api/v1/cohorts/ideas/new', params: {
+      title: "dog",
+      pitch: 'save the world',
+      problem: "overpopulation",
+      solution: 'none',
+      audience: 'students',
+      features: 'dope stuff',
+      apis: 'sure',
+      oauth: 'github',
+      user_id: user.id,
+      cohort_id: cohort.id 
+    })
 
     expected_url = "https://images.unsplash.com/photo-1534361960057-19889db9621e?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjExNzMzMX0"
     idea = Idea.last
