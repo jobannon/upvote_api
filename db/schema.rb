@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_25_054713) do
+ActiveRecord::Schema.define(version: 2020_02_26_045245) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2020_02_25_054713) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "cohort_id", null: false
     t.integer "vote_count", default: 0
+    t.string "img_url", default: "https://images.unsplash.com/photo-1552862750-746b8f6f7f25?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80"
     t.index ["cohort_id"], name: "index_ideas_on_cohort_id"
     t.index ["user_id"], name: "index_ideas_on_user_id"
   end
