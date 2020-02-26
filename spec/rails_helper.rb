@@ -71,13 +71,13 @@ Shoulda::Matchers.configure do |config|
   with.library :rails
 end
 
-VCR.configure do |config|
-  config.ignore_localhost = true
-  config.cassette_library_dir = 'spec/fixtures/cassettes'
-  config.hook_into :webmock
-  config.configure_rspec_metadata!
-  config.filter_sensitive_data("<YOUTUBE_API_KEY>") { ENV['YOUTUBE_API_KEY'] }
-  config.filter_sensitive_data("<GITHUB_ACCESS_TOKEN>") { ENV['GITHUB_ACCESS_TOKEN'] }
-end
+# VCR.configure do |config|
+#   config.ignore_localhost = true
+#   config.cassette_library_dir = 'spec/fixtures/cassettes'
+#   config.hook_into :webmock
+#   config.configure_rspec_metadata!
+#   config.filter_sensitive_data("<UPSPLASH_ACCESS_KEY>") { ENV['UPSPLASH_ACCESS_KEY'] }
+#   config.filter_sensitive_data("<UPSPLASH_SECRET_KEY>") { ENV['UPSPLASH_SECRET_KEY'] }
+# end
 
 end
