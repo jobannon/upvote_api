@@ -7,6 +7,7 @@ class User < ApplicationRecord
   validates_presence_of :handle
 
   def self.create_user(auth_hash)
-    self.create!(github_id: auth_hash[:uid], token: auth_hash[:credentials][:token], handle: auth_hash[:info][:nickname], cohort_id: 1)
+    cohort = Cohort.last
+    self.create!(github_id: auth_hash[:uid], token: auth_hash[:credentials][:token], handle: auth_hash[:info][:nickname], cohort_id: cohort.id)
   end
 end
