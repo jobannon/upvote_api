@@ -1,4 +1,4 @@
-class VoteController < ApplicationController
+class Api::V1::VoteController < ApplicationController
   def create
     idea = Idea.find(params[:id])
     idea.vote_count += 1
