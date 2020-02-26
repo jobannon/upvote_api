@@ -5,6 +5,6 @@ class SessionsController < ApplicationController
     auth_hash = request.env['omniauth.auth']
     user = User.create_user(auth_hash)
     session[:user_id] = user.id
-    redirect_to 'http://localhost:9292/cohorts/1909/ideas'
+    redirect_to 'http://localhost:9292/cohorts/ideas'
   end
 end
