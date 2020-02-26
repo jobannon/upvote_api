@@ -6,8 +6,8 @@ Rails.application.routes.draw do
       get '/cohorts', to: 'cohorts#index'
       get '/cohorts/ideas', to: 'ideas#index'
       get '/cohorts/ideas/:id', to: 'ideas#show'
-      post '/cohorts/ideas/:id', to: 'ideas#create'
-      patch '/cohorts/ideas/:id', to: 'ideas#update'
+      post '/cohorts/ideas/new', to: 'ideas#create'
+      post '/cohorts/ideas/:id', to: 'votes#create'
     end
   end
 
