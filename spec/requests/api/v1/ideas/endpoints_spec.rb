@@ -40,7 +40,7 @@ describe "ideas API" do
     expect(idea['attributes'].keys).to_not include('created_at')
   end
 
-  it "create idea " do 
+  it "create idea" do 
     cohort = create(:cohort)
     user = create(:user, cohort_id: cohort.id)
 
@@ -59,11 +59,9 @@ describe "ideas API" do
       cohort_id: cohort.id 
     })
 
-
-    expected_url = "https://images.unsplash.com/photo-1534361960057-19889db9621e?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjExNzMzMX0"
+    expected_url = "https://bit.ly/2wIizmi"
     idea = Idea.last
 
-    expect(idea.img_url).to eq(expected_url)
     expect(idea.img_url).to eq(expected_url)
   end
 end
