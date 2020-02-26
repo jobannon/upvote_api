@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   before_action :set_headers
 
   def current_user
-      @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
   private
@@ -15,5 +15,4 @@ class ApplicationController < ActionController::Base
     headers['Access-Control-Allow-Headers'] = '*,x-requested-with,Content-Type,If-Modified-Since,If-None-Match'
     headers['Access-Control-Max-Age'] = '86400'
   end
-
 end
