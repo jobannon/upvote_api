@@ -40,7 +40,7 @@ describe "ideas API" do
     expect(idea['attributes'].keys).to_not include('created_at')
   end
 
-  it "create idea " do 
+  xit "create idea " do 
     cohort = create(:cohort)
     user = create(:user, cohort_id: cohort.id)
     idea = create(:idea, cohort_id: cohort.id, user_id: user.id)
