@@ -40,6 +40,7 @@ group :development, :test do
   #gem 'database_cleaner'
   #gem 'foundation-rails'
   gem 'launchy'
+  gem 'travis'
   gem 'pry'
   gem 'rspec'
   gem 'rspec-rails'
