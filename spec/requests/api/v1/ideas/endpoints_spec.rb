@@ -59,7 +59,7 @@ describe "ideas API" do
       cohort_id: cohort.id 
     })
 
-    expected_url = "https://bit.ly/2wIizmi"
+    expected_url = "https://images.unsplash.com/photo-1534361960057-19889db9621e?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjExNzMzMX0"
     idea = Idea.last
 
     expect(idea.img_url).to eq(expected_url)
