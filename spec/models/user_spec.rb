@@ -11,4 +11,10 @@ RSpec.describe User, type: :model do
     it { should validate_presence_of(:token) }
     it { should validate_presence_of(:handle) }
   end
+
+  describe 'class methods' do
+    xit '.create_user' do
+      # write test for omniauth github
+    end
+  end
 end
