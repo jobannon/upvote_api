@@ -7,4 +7,13 @@ class SessionsController < ApplicationController
     session[:user_id] = user.id
     redirect_to "#{ENV['FRONTEND']}/cohorts/ideas"
   end
+
+  def user
+    if current_user
+      data = {data: {id: current_user.id, ideas: current_user.ideas}}
+    else
+      data = {data: {message: "Not Logged In"}}
+    end
+    render json: data
+  end
 end
