@@ -16,4 +16,8 @@ class Api::V1::VotesController < ApplicationController
     render json: {data: stats.statistics}
   end
 
+  def voting_limit
+    #endpoint needsd
+  end
+
 end
