@@ -1,9 +1,10 @@
 require 'rails_helper'
 
 describe "ideas API" do
-  xit "send a list of ideas for each cohort" do
+  it "send a list of ideas for each cohort" do
     cohort = create(:cohort)
     user = create(:user, cohort_id: cohort.id)
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
     create_list(:idea, 5, cohort_id: cohort.id, user_id: user.id)
 
