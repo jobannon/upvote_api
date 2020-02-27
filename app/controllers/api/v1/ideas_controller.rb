@@ -16,21 +16,10 @@ class Api::V1::IdeasController < ApplicationController
     user = current_user 
     Idea.create!(title: params[:title], pitch: params[:pitch], problem: params[:problem], solution: params[:solution], features: params[:features], audience: params[:audience], apis: params[:apis], oauth: params[:oauth], cohort_id: user.cohort_id, user_id: user.id, img_url: photo_url)
 
-    redirect_to 'https://upvote-ideas-ui.herokuapp.com/cohorts/ideas'
+    redirect_to "#{ENV['FRONTEND']}/cohorts/ideas"
   end
 
-  #private
-
-  # def idea_params
-  #   params.permit(
-  #     :title,
-  #     :pitch,
-  #     :problem,
-  #     :solution,
-  #     :audience,
-  #     :features,
-  #     :apis,
-  #     :oauth
-  #   )
-  # end
+  def statistics
+    current_user
+  end
 end

@@ -6,6 +6,6 @@ class IdeasPhotoGetter
 
   def get_photo
     returned_json_photo = UpsplashService.new(@keyword).get_keyword_photo
-    returned_json_photo[:results].first[:urls][:thumb]
+    returned_json_photo[:results].first[:urls][:full]
   end
 end
