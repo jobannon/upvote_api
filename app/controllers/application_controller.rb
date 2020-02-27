@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   private
 
   def set_headers
-    headers['Access-Control-Allow-Origin'] = 'https://upvote-ideas-ui.herokuapp.com'
+    headers['Access-Control-Allow-Origin'] = 'http://localhost:9292'
     headers['Access-Control-Allow-Credentials'] = true
     headers['Access-Control-Expose-Headers'] = 'ETag'
     headers['Access-Control-Allow-Methods'] = 'GET, POST, PATCH, PUT, DELETE, OPTIONS, HEAD'

@@ -5,6 +5,6 @@ class Api::V1::VotesController < ApplicationController
     idea = Idea.find(params[:id])
     idea.vote_count += 1
     idea.save
-    redirect_to 'https://upvote-ideas-ui.herokuapp.com/cohorts/ideas'
+    redirect_to 'http://localhost:9292/cohorts/ideas'
   end
 end
