@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_26_045245) do
+ActiveRecord::Schema.define(version: 2020_02_27_205446) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,12 @@ ActiveRecord::Schema.define(version: 2020_02_26_045245) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["cohort_id"], name: "index_users_on_cohort_id"
+  end
+
+  create_table "votes", force: :cascade do |t|
+    t.string "user_id"
+    t.string "idea_id"
+    t.string "cohort_id"
   end
 
   add_foreign_key "ideas", "cohorts"
