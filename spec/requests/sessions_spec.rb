@@ -13,6 +13,7 @@ describe "current user endpoint" do
 
     user_info = JSON.parse(response.body)['data']
     expect(user_info['id']).to eq(user.id)
+    expect(user_info['handle']).to eq(user.handle)
     expect(user_info['ideas'].count).to eq(2)
   end
 end

@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
 
   def user
     if current_user
-      data = {data: {id: current_user.id, ideas: current_user.ideas}}
+      data = {data: {id: current_user.id, handle: current_user.handle, ideas: current_user.ideas}}
     else
       data = {data: {message: "Not Logged In"}}
     end

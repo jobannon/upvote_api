@@ -53,11 +53,12 @@ describe "stats" do
     Vote.create!(user_id: user.id, idea_id: idea.id, cohort_id: user.cohort_id)
     Vote.create!(user_id: user.id, idea_id: idea.id, cohort_id: user.cohort_id)
     result = Vote.vote_limit(user, idea.id)
+    expect(result).to eq(true)
 
     Vote.create!(user_id: user.id, idea_id: idea.id, cohort_id: user.cohort_id)
     result = Vote.vote_limit(user, idea.id)
     expect(result).to eq(false)
-    
+
     get '/api/v1/statistics'
 
     expect(response).to be_successful
