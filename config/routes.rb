@@ -12,9 +12,11 @@ Rails.application.routes.draw do
       post '/cohorts/ideas/:id', to: 'votes#create'
 
       get '/cohorts/ideas/:id', to: 'ideas#show'
+      get '/statistics', to: 'votes#show'
     end
   end
 
   get 'auth/github', as: 'github_login'
   get '/auth/github/callback', to: 'sessions#create'
+  get '/current_user', to: 'sessions#user'
 end
