@@ -26,7 +26,7 @@ user_3 = User.create!(
 )
 
 idea_1 = Idea.create!(
-  title: 'Bucket',
+  title: 'bucket',
   pitch: Faker::Quotes::Shakespeare.hamlet_quote,
   problem: Faker::TvShows::MichaelScott.quote,
   solution: Faker::Food.description,
@@ -40,7 +40,7 @@ idea_1 = Idea.create!(
 )
 
 idea_2 = Idea.create!(
-  title: 'Nebulous',
+  title: 'bridge',
   pitch: Faker::Quotes::Shakespeare.hamlet_quote,
   problem: Faker::TvShows::MichaelScott.quote,
   solution: Faker::Food.description,
@@ -48,9 +48,9 @@ idea_2 = Idea.create!(
   features: Faker::Space.nebula,
   apis: Faker::GreekPhilosophers.name,
   oauth: Faker::BossaNova.song,
-  img_url: 'https://bit.ly/39cdam8',
+  img_url: 'https://bit.ly/3ahT8qt',
   cohort_id: cohort.id,
-  user_id: user_2.id
+  user_id: user_1.id
 )
 
 idea_3 = Idea.create!(
@@ -68,7 +68,7 @@ idea_3 = Idea.create!(
 )
 
 idea_4 = Idea.create!(
-  title: 'Spittelau',
+  title: 'spittelau',
   pitch: Faker::Quotes::Shakespeare.hamlet_quote,
   problem: Faker::TvShows::MichaelScott.quote,
   solution: Faker::Food.description,
@@ -78,7 +78,7 @@ idea_4 = Idea.create!(
   oauth: Faker::BossaNova.song,
   img_url: 'https://bit.ly/32DHJ1p',
   cohort_id: cohort.id,
-  user_id: user_3.id
+  user_id: user_2.id
 )
 
 idea_5 = Idea.create!(
@@ -92,10 +92,24 @@ idea_5 = Idea.create!(
   oauth: Faker::BossaNova.song,
   img_url: 'https://bit.ly/2T5F2mg',
   cohort_id: cohort.id,
-  user_id: user_3.id
+  user_id: user_2.id
 )
 
-idea_6 = Idea.create!(
+idea_7 = Idea.create!(
+  title: 'yurt',
+  pitch: Faker::Quotes::Shakespeare.hamlet_quote,
+  problem: Faker::TvShows::MichaelScott.quote,
+  solution: Faker::Food.description,
+  audience: Faker::Relationship.familial,
+  features: Faker::Space.nebula,
+  apis: Faker::GreekPhilosophers.name,
+  oauth: Faker::BossaNova.song,
+  img_url: 'https://bit.ly/2wRSRMh',
+  cohort_id: cohort.id,
+  user_id: user_2.id
+)
+
+idea_8 = Idea.create!(
   title: 'flight',
   pitch: Faker::Quotes::Shakespeare.hamlet_quote,
   problem: Faker::TvShows::MichaelScott.quote,
@@ -105,6 +119,62 @@ idea_6 = Idea.create!(
   apis: Faker::GreekPhilosophers.name,
   oauth: Faker::BossaNova.song,
   img_url: 'https://bit.ly/397yF7h',
+  cohort_id: cohort.id,
+  user_id: user_3.id
+)
+
+idea_9 = Idea.create!(
+  title: 'concept',
+  pitch: Faker::Quotes::Shakespeare.hamlet_quote,
+  problem: Faker::TvShows::MichaelScott.quote,
+  solution: Faker::Food.description,
+  audience: Faker::Relationship.familial,
+  features: Faker::Space.nebula,
+  apis: Faker::GreekPhilosophers.name,
+  oauth: Faker::BossaNova.song,
+  img_url: 'https://bit.ly/3cewIYF',
+  cohort_id: cohort.id,
+  user_id: user_3.id
+)
+
+idea_10 = Idea.create!(
+  title: 'clarity',
+  pitch: Faker::Quotes::Shakespeare.hamlet_quote,
+  problem: Faker::TvShows::MichaelScott.quote,
+  solution: Faker::Food.description,
+  audience: Faker::Relationship.familial,
+  features: Faker::Space.nebula,
+  apis: Faker::GreekPhilosophers.name,
+  oauth: Faker::BossaNova.song,
+  img_url: 'https://bit.ly/2PtL1iA',
+  cohort_id: cohort.id,
+  user_id: user_3.id
+)
+
+idea_11 = Idea.create!(
+  title: 'ladders',
+  pitch: Faker::Quotes::Shakespeare.hamlet_quote,
+  problem: Faker::TvShows::MichaelScott.quote,
+  solution: Faker::Food.description,
+  audience: Faker::Relationship.familial,
+  features: Faker::Space.nebula,
+  apis: Faker::GreekPhilosophers.name,
+  oauth: Faker::BossaNova.song,
+  img_url: 'https://bit.ly/384SOd8',
+  cohort_id: cohort.id,
+  user_id: user_3.id
+)
+
+idea_12 = Idea.create!(
+  title: 'marbled',
+  pitch: Faker::Quotes::Shakespeare.hamlet_quote,
+  problem: Faker::TvShows::MichaelScott.quote,
+  solution: Faker::Food.description,
+  audience: Faker::Relationship.familial,
+  features: Faker::Space.nebula,
+  apis: Faker::GreekPhilosophers.name,
+  oauth: Faker::BossaNova.song,
+  img_url: 'https://bit.ly/2Pum1rg',
   cohort_id: cohort.id,
   user_id: user_3.id
 )
