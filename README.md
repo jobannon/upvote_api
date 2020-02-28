@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/jobannon/upvote_api.svg?branch=master)](https://travis-ci.com/jobannon/upvote_api)
+
 ## Endpoints
 
 Data for all endpoints are exposed under an `api` and version (`v1`) namespace (e.g., `/api/v1/cohorts`), returned in JSON format.
