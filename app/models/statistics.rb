@@ -18,7 +18,7 @@ class Statistics
   end
 
   def percent_vote_complete
-    (number_of_votes_cast / available_number_of_votes)
+    "#{((number_of_votes_cast.to_f / available_number_of_votes) * 100).round(1)}%"
   end
 
   def available_number_of_votes

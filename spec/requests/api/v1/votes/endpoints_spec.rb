@@ -17,9 +17,8 @@ describe "stats" do
     stats = JSON.parse(response.body)['data']
     expect(stats['stats']['user_count']).to eq(2)
     expect(stats['stats']['vote_count']).to eq(1)
-    expect(stats['stats']['percent_complete']).to eq((1 / (6 * 3)))
+    expect(stats['stats']['percent_complete']).to eq("#{((1.00 / (2 * 3)) * 100).round(1)}%")
   end
-
 
   it "three votes" do
     cohort = create(:cohort)
@@ -39,7 +38,7 @@ describe "stats" do
     stats = JSON.parse(response.body)['data']
     expect(stats['stats']['user_count']).to eq(2)
     expect(stats['stats']['vote_count']).to eq(3)
-    expect(stats['stats']['percent_complete']).to eq((3 / (6 * 3)))
+    expect(stats['stats']['percent_complete']).to eq("#{((3.00 / (2 * 3)) * 100).round(1)}%")
   end
 
   it "max votes" do
@@ -66,6 +65,6 @@ describe "stats" do
     stats = JSON.parse(response.body)['data']
     expect(stats['stats']['user_count']).to eq(2)
     expect(stats['stats']['vote_count']).to eq(3)
-    expect(stats['stats']['percent_complete']).to eq((3 / (6 * 3)))
+    expect(stats['stats']['percent_complete']).to eq("#{((3.00 / (2 * 3)) * 100).round(1)}%")
   end
 end
