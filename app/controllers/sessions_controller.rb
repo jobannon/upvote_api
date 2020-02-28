@@ -3,8 +3,13 @@ class SessionsController < ApplicationController
 
   def create
     auth_hash = request.env['omniauth.auth']
-    user = User.create_user(auth_hash)
-    session[:user_id] = user.id
+    found_user = User.where(github_id: auth_hash['uid'])
+    if found_user.length > 0
+      session[:user_id] = found_user[0].id
+    else
+      user = User.create_user(auth_hash)
+      session[:user_id] = user.id
+    end
     redirect_to "#{ENV['FRONTEND']}/cohorts/ideas"
   end
 
