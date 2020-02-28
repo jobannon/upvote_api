@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     end
   end
 
+  get '/logout', to: "sessions#destroy"
   get 'auth/github', as: 'github_login'
   get '/auth/github/callback', to: 'sessions#create'
   get '/current_user', to: 'sessions#user'

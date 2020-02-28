@@ -16,4 +16,10 @@ class SessionsController < ApplicationController
     end
     render json: data
   end
+
+  def destroy
+    # current_user.session.destroy
+    session.clear
+    redirect_to "#{ENV['FRONTEND']}"
+  end
 end
