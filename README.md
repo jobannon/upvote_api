@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.com/jobannon/upvote_api.svg?branch=master)](https://travis-ci.com/jobannon/upvote_api)
 
-For further documentation regarding the scope and functionality of this API, please review the repository supporing the Front-End [here](https://github.com/jobannon/upvote_ui)
+For further documentation regarding the scope and functionality of this API, please review the repository supporting the Front-End - [Here](https://github.com/jobannon/upvote_ui)
 ## Hosted
   - [Heroku](https://upvote-ideas.herokuapp.com/)
 
